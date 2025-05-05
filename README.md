@@ -13,7 +13,7 @@ On Linux, you can either use [Pre-built archives](https://github.com/neovim/neov
 
 For example, since I don’t have superuser privileges on the remote server, I prefer to install Neovim locally. This can be done with the following steps:
 ``` sh
-# Download Neovim 0.9 AppImage (I don't recommend older version)
+# Download Neovim 0.9 AppImage (I don't recommend older versions)
 curl -LO https://github.com/neovim/neovim/releases/download/v0.9.1/nvim.appimage
 chmod u+x nvim.appimage
 ./nvim.appimage
@@ -73,11 +73,11 @@ If you don’t need autocompletion and the outline (taglist) window, or if you a
 
 ## Install `npm`
 
-`Node.js` is is a JavaScript runtime environment, and `npm` (Node Package Manager) is its associated package manager.
+`Node.js` is a JavaScript runtime environment, and `npm` (Node Package Manager) is its associated package manager.
 
 Since `mason.nvim` uses `npm` to install LSP servers (e.g., `pyright` for Python), and `npm` typically comes bundled with `Node.js`, we need to install them.
 
-If you have superuser privileges, you can simply run `sudo apt install npm` on Ubuntun.  Alternatively, you can install `npm` locally using `nvm` (Node Version Manager), which allows you to manage Node.js versions without requiring `sudo` access:
+If you have superuser privileges, you can simply run `sudo apt install npm` on Ubuntu (though not recommended as you may get an outdated version of Node.js).  Alternatively, you can install `npm` locally using `nvm` (Node Version Manager), which allows you to manage Node.js versions without requiring `sudo` access:
 ``` sh
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -86,7 +86,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# Install the long-term-support (LTS) verion of Node.js
+# Install the long-term-support (LTS) version of Node.js
 nvm install --lts
 ```
 Once `npm` is available, you are ready to install LSP servers using `mason.nvim`.
