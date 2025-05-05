@@ -100,7 +100,7 @@ Then, copy my [**nvim**](./nvim) folder to your `~/.config/` directory. Launch N
 
 Since Neovim follows the XDG base directory specification, the downloaded plugins will be stored in `~/.local/share/nvim/` folder (assuming Neovim is installed in `~/.local/opt/nvim/`).
 
-If your remote server has no internet access, you can configure Neovim on your local machine and then copy the `~/.local/share/nvim` directory to the remote server using tools like `scp`. 
+If your remote server has no internet access, you can configure Neovim on your local machine and then copy the `~/.local/share/nvim` directory (you might also need to transfer your `~/.npm` directory and adjust environment paths for `npm` and `node` on the remote server if required) to the remote server using tools like `scp`. 
 
 ## Some notes
 
