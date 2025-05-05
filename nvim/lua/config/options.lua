@@ -26,5 +26,8 @@ vim.diagnostic.config({ virtual_text = false, signs = false, underline = false }
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
+-- Replace ~ on empty lines after the end of buffer with spaces
+vim.opt.fillchars:append({ eob = ' ' })
+
 vim.cmd("colorscheme molokai")
 
