@@ -72,7 +72,7 @@ I chose not to use some famous plugins like [**coc.nvim**](https://github.com/ne
 If you don't need autocompletion or the outline/taglist window -- or if you're only using non-*Node.js*-based LSP servers (such as `clangd` for C++) or already have `Node.js` installed -- you can skip the next section.
 
 
-## Install `npm`
+## Install Node.js
 
 [**Node.js**](https://nodejs.org) is a JavaScript runtime environment, and `npm` (Node Package Manager) is its associated package manager.
 
