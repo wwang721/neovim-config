@@ -43,9 +43,10 @@ I am using 💤[**folke/lazy.nvim**](https://github.com/folke/lazy.nvim) as my *
 │       ├── plugin1.lua
 │       ├── **
 │       └── plugin2.lua
-└── init.lua
+├── init.lua
+└── lazy-lock.json
 ```
-The [init.lua](./nvim/init.lua) file serves as the *Lua*-based equivalent of `init.vim` (or [.vimrc](./.vimrc) in *Vim*). When using `💤lazy.nvim` as the plugin manager, [init.lua](./nvim/init.lua) acts as the main entry point, while the plugin manager itself is configured in a separate [lazy.lua](./nvim/lua/config/lazy.lua) file. Detailed user settings are modularized: general options go in [option.lua](./nvim/lua/config/options.lua), and key mappings and autocommands are defined in their respective files within the [lua/config/](./nvim/lua/config) directory. Refer to the [official documentation](https://lazy.folke.io/) for a detailed explanation.
+The [init.lua](./nvim/init.lua) file serves as the *Lua*-based equivalent of `init.vim` (or [.vimrc](./.vimrc) in *Vim*). When using `💤lazy.nvim` as the plugin manager, [init.lua](./nvim/init.lua) acts as the main entry point. Plugin versioning is controlled by the auto-generated [lazy-lock.json](./nvim/lazy-lock.json) file (not necessary), while the plugin manager itself is configured separately in [lazy.lua](./nvim/lua/config/lazy.lua). Detailed user settings are modularized: general options go in [option.lua](./nvim/lua/config/options.lua), and key mappings and autocommands are defined in their respective files within the [lua/config/](./nvim/lua/config) directory; plugin settings are in the [lua/plugins/](./nvim/lua/plugins) directory. Refer to the [official documentation](https://lazy.folke.io/) for a detailed explanation.
 
 You can even use 🚀[**LazyVim**](https://www.lazyvim.org/), a pre-configured Neovim setup powered by the same plugin manager `💤lazy.nvim`, which eliminates the need to manage plugins manually. However, I find `🚀LazyVim` a bit too heavy for my needs, so here is my minimal plugin list:
 
@@ -61,7 +62,7 @@ You can even use 🚀[**LazyVim**](https://www.lazyvim.org/), a pre-configured N
 Neovim has a built-in **Language Server Protocol (LSP)** client. If you want autocompletion, you'll need:
 
 * [**hrsh7th/nvim-cmp**](https://github.com/hrsh7th/nvim-cmp): autocompletion engine in [cmp.lua](./nvim/lua/plugins/cmp.lua)
-* [**williamboman/mason.nvim**](https://github.com/williamboman/mason.nvim): LSP-server manager for different programming languages in [mason.lua](./nvim/lua/plugins/mason.lua)
+* [**williamboman/mason.nvim**](https://github.com/williamboman/mason.nvim): LSP-server manager for different programming languages -- a dependency in [lsp.lua](./nvim/lua/plugins/lsp.lua)
 * [**neovim/nvim-lspconfig**](https://github.com/neovim/nvim-lspconfig): easy LSP setup in [lsp.lua](./nvim/lua/plugins/lsp.lua)
 * [**stevearc/aerial.nvim**](https://github.com/stevearc/aerial.nvim): code outline/taglist window in [aerial.lua](./nvim/lua/plugins/aerial.lua)
 
@@ -78,7 +79,7 @@ If you don't need autocompletion or the outline/taglist window -- or if you're o
 
 Since `mason.nvim` uses `npm` to install LSP servers (e.g., `pyright` for Python), and `npm` typically comes bundled with `Node.js`, we need to install them.
 
-If you have superuser privileges, you can simply run `sudo apt install npm` on Ubuntu (though not recommended as you may get an outdated version of Node.js).  Alternatively, you can install `npm` locally using `nvm` (Node Version Manager), which allows you to manage `Node.js` versions without requiring `sudo` access:
+If you have superuser privileges, you can simply run `sudo apt install npm` on *Ubuntu* (though not recommended as you may get an outdated version of Node.js).  Alternatively, you can install `npm` locally using `nvm` (Node Version Manager), which allows you to manage `Node.js` versions without requiring `sudo` access:
 ``` sh
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -103,7 +104,7 @@ Once `npm` and `node` are available, you are ready to install LSP servers using 
 First, clone my configurations to your local machine:
 ``` sh
 git clone https://github.com/wwang721/neovim-config
-rm -rf ~/.config/nvim  # or make a backup of your current Neovim configs
+rm -rf ~/.config/nvim  # or make a backup of your current Neovim config
 ```
 
 If you don't need autocompletion and the outline/taglist window, or prefer not to install `Node.js`, you can remove the files `cmp.lua`, `lsp.lua`, and `aerial.lua` from my [neovim-config/nvim/lua/plugins/](./nvim/lua/plugins/) folder.
@@ -125,11 +126,11 @@ If your remote server has no public internet access, you can configure Neovim on
 
 * `:Lazy` opens the `lazy.nvim` UI, allowing you to sync/clean/restore/... plugins. It also displays the loading time of each plugin, helping you identify candidates for ["lazy-loading"](https://lazy.folke.io/spec/lazy_loading) to improve startup efficiency.
 
-* I have mapped `<F2>` to toggle the file explorer tree and `<F3>` to toggle the outline (taglist) window. You can adjust the window widths and key mappings in [nvim/lua/plugins/tree.lua](./nvim/lua/plugins/tree.lua) and [nvim/lua/plugins/aerial.lua](./nvim/lua/plugins/aerial.lua).
+* I have mapped `<F2>` to toggle the file explorer tree and `<F3>` to toggle the outline (taglist) window. You can adjust the window widths and key mappings in [tree.lua](./nvim/lua/plugins/tree.lua) and [aerial.lua](./nvim/lua/plugins/aerial.lua).
 
 * `:LspInfo` to check the status of the currently active LSP server.
 
-* `:Mason` opens the UI of `mason.nvim`, where you can view available LSP servers. Move the cursor to the desired server and press `i` to install it. Alternatively, you can edit [nvim/lua/plugins/lsp.lua](./nvim/lua/plugins/lsp.lua) to add the desired servers under the `ensure_installed` list. I have installed three language servers: `pyright` for Python, `clangd` for C++, and `bashls` for Bash.
+* `:Mason` opens the UI of `mason.nvim`, where you can view available LSP servers. Move the cursor to the desired server and press `i` to install it. Alternatively, you can edit [lsp.lua](./nvim/lua/plugins/lsp.lua) to add the desired servers under the `ensure_installed` list. I have installed three language servers: `pyright` for Python, `clangd` for C++, and `bashls` for Bash.
 
 * With the clipboard plugin [nvim-osc52](https://github.com/ojroques/nvim-osc52), any text yanked (`y`) in visual mode is automatically copied to the system clipboard.
 
