@@ -126,5 +126,5 @@ If your remote server has no public internet access, you can configure Neovim on
 
 * In visual mode, `>` and `<` function as `Tab` and `Shift+Tab` in VS Code, allowing you to indent or unindent selected code blocks.
 
-* In *Neovim*, you can right-click to open a popup menu that includes a `Select All` for quickly selecting the entire buffer. Alternatively, you can use *Vim*-style commands such as `ggvG$` to select the entire buffer or `ggyG` to copy it.
+* In *Neovim*, you can right-click to open a popup menu that includes a `Select All` option for quickly selecting the entire buffer. Alternatively, you can use *Vim*-style commands such as `ggvG$` to select the entire buffer or `ggyG` to copy it.
 
