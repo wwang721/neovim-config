@@ -110,7 +110,7 @@ If you don't need autocompletion and the outline/taglist window, or prefer not t
 
 Then, copy my [**nvim**](./nvim) folder to your `~/.config/` directory by 
 ``` sh
-mv neovim-config/nvm ~/.config/
+mv neovim-config/nvim ~/.config/
 nvim  # launch Neovim
 ```
 `💤lazy.nvim` will automatically download all required plugins -- done!
