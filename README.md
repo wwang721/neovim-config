@@ -70,7 +70,7 @@ Neovim has a built-in **Language Server Protocol (LSP)** client. If you want aut
 
 I chose not to use some famous plugins like [**coc.nvim**](https://github.com/neoclide/coc.nvim) and [**nvim-treesitter**](https://github.com/nvim-treesitter/nvim-treesitter), as I prefer a lightweight editor that launches quickly.
 
-If you don't need autocompletion or the outline/taglist window -- or if you're only using non-*Node.js*-based LSP servers (such as `clangd` for C++) or already have `Node.js` installed -- you can skip the next section.
+If you don't need autocompletion or the outline/taglist window -- or if you're only using non-*Node.js*-based LSP servers (such as `clangd` for C/C++) or already have `Node.js` installed -- you can skip the next section.
 
 
 ## 🧪 Install Node.js
@@ -130,7 +130,7 @@ If your remote server has no public internet access, you can configure Neovim on
 
 * `:LspInfo` to check the status of the currently active LSP server.
 
-* `:Mason` opens the UI of `mason.nvim`, where you can view available LSP servers. Move the cursor to the desired server and press `i` to install it. Alternatively, you can edit [lsp.lua](./nvim/lua/plugins/lsp.lua) to add the desired servers under the `ensure_installed` list. I have installed three language servers: `pyright` for Python, `clangd` for C++, and `bashls` for Bash.
+* `:Mason` opens the UI of `mason.nvim`, where you can view available LSP servers. Move the cursor to the desired server and press `i` to install it. Alternatively, you can edit [lsp.lua](./nvim/lua/plugins/lsp.lua) to add the desired servers under the `ensure_installed` list. I have installed three language servers: `pyright` for Python, `clangd` for C/C++, and `bashls` for shell scripts.
 
 * With the clipboard plugin [nvim-osc52](https://github.com/ojroques/nvim-osc52), any text yanked (`y`) in visual mode is automatically copied to the system clipboard.
 
