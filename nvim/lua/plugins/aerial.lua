@@ -1,7 +1,6 @@
 return {
     "stevearc/aerial.nvim",
     event = { "BufReadPost", "BufNewFile" },
-    event = "BufReadPre",
     opts = {
         backends = { "lsp", "treesitter", "markdown", "man" },
         layout = {
