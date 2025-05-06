@@ -9,8 +9,8 @@ return {
                 winhighlight = "Normal:Normal,NormalNC:Normal,SignColumn:Normal",
                 signcolumn = "yes",
             },
-            min_width = 26, -- minimum width in columns
-            max_width = 26, -- maximum width in columns
+            min_width = 25, -- minimum width in columns
+            max_width = 25, -- maximum width in columns
         },
         show_guides = true,
         guides = {
