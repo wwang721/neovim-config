@@ -3,6 +3,10 @@ vim.g.deprecation_warnings = false
 
 local opt = vim.opt
 
+-- already shown in the statusline
+opt.showmode = false -- hide mode messages in the left-bottom corner
+opt.showcmd = false  -- hide partial key sequences in the bottom-right corner
+
 opt.laststatus = 3 -- global statusline
 opt.mouse = "a" -- Enable mouse mode
 
