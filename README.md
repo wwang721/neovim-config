@@ -100,9 +100,20 @@ Once `npm` and `node` are available, you are ready to install LSP servers using 
 
 ## 💻 Install plugins
 
-If you don't need autocompletion and the outline/taglist window, or prefer not to install `Node.js`, you can remove the files `cmp.lua`, `mason.lua`, `lsp.lua`, and `aerial.lua` from my [nvim/lua/plugins/](./nvim/lua/plugins/) folder.
+First, clone my configurations to your local machine:
+``` sh
+git clone https://github.com/wwang721/neovim-config
+rm -rf ~/.config/nvim  # or make a backup of your current Neovim configs
+```
 
-Then, copy my [**nvim**](./nvim) folder to your `~/.config/` directory. Launch Neovim by running `nvim`. It will automatically download all required plugins -- done!
+If you don't need autocompletion and the outline/taglist window, or prefer not to install `Node.js`, you can remove the files `cmp.lua`, `lsp.lua`, and `aerial.lua` from my [neovim-config/nvim/lua/plugins/](./nvim/lua/plugins/) folder.
+
+Then, copy my [**nvim**](./nvim) folder to your `~/.config/` directory by 
+``` sh
+mv neovim-config/nvm ~/.config/
+nvim  # launch Neovim
+```
+`💤lazy.nvim` will automatically download all required plugins -- done!
 
 Since Neovim follows the **XDG base directory specification**, the downloaded plugins will be stored in your `~/.local/share/nvim/` folder.
 
