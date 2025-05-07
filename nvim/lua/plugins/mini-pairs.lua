@@ -1,6 +1,6 @@
 return {
     "echasnovski/mini.pairs",
-    event = "InsertEnter",
+    event = { "InsertEnter", "CmdlineEnter" },
     opts = {
         -- These are the default settings in LazyVim
         modes = { insert = true, command = true, terminal = false },
