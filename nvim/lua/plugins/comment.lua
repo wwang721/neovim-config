@@ -6,6 +6,6 @@ return {
     end,
     keys = {
         { "gcc", mode = "n", desc = "Toggle line comment" },
-        { "gc",  mode = { "n", "v" }, desc = "Toggle comment (line/block)" },
+        { "gc",  mode = { "n", "v" }, desc = "Toggle line comment (line/block)" },
     },
 }
