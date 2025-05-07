@@ -70,7 +70,7 @@ Neovim has a built-in **Language Server Protocol (LSP)** client. If you want aut
 
 I chose not to use some famous plugins like [**coc.nvim**](https://github.com/neoclide/coc.nvim) and [**nvim-treesitter**](https://github.com/nvim-treesitter/nvim-treesitter), as I prefer a lightweight editor that launches quickly.
 
-If you don't need autocompletion or the outline/taglist window -- or if you're only using non-*Node.js*-based LSP servers (such as `clangd` for C/C++) or already have `Node.js` installed -- you can skip the next section.
+If you don't need *LSP*-based autocompletion and the outline/taglist window -- or if you're only using non-*Node.js*-based LSP servers (such as `clangd` for C/C++) or already have `Node.js` installed -- you can skip the next section.
 
 
 ## 🧪 Install Node.js
@@ -107,14 +107,14 @@ git clone https://github.com/wwang721/neovim-config
 rm -rf ~/.config/nvim  # or make a backup of your current Neovim config
 ```
 
-If you don't need autocompletion and the outline/taglist window, or prefer not to install `Node.js`, you can remove the files `cmp.lua`, `lsp.lua`, and `aerial.lua` from my [neovim-config/nvim/lua/plugins/](./nvim/lua/plugins/) folder.
+If you don't need *LSP*-based autocompletion and only need an outline/taglist window for text files (such as Markdown), or prefer not to install `Node.js`, you can remove the lock file [lazy-lock.json](./nvim/lazy-lock.json) with `rm neovim-config/nvim/lazy-lock.json`, and remove [lsp.lua](./nvim/lua/plugins/lsp.lua) (or even [aerial.lua](./nvim/lua/plugins/aerial.lua)) from my [plugins](./nvim/lua/plugins/) folder: `rm neovim-config/nvim/lua/plugins/lsp.lua` or even with `rm neovim-config/nvim/lua/plugins/aerial.lua`, and then replace the [cmp.lua](./nvim/lua/plugins/cmp.lua) file in the [plugins]((./nvim/lua/plugins/)) folder with the non-*Node.js* version [cmp.lua](./cmp.lua): `mv neovim-config/cmp.lua neovim-config/nvim/lua/plugins/`.
 
 Then, copy my [**nvim**](./nvim) folder to your `~/.config/` directory by 
 ``` sh
 mv neovim-config/nvim ~/.config/
 nvim  # launch Neovim
 ```
-`💤lazy.nvim` will automatically download all required plugins -- done!
+`💤lazy.nvim` will automatically download all required plugins -- done! Then you can remove the rest of this repository with `rm -rf neovim-config`.
 
 Since Neovim follows the **XDG base directory specification**, the downloaded plugins will be stored in your `~/.local/share/nvim/` folder.
 
@@ -134,9 +134,10 @@ If your remote server has no public internet access, you can configure Neovim on
 
 * With the clipboard plugin [nvim-osc52](https://github.com/ojroques/nvim-osc52), any text yanked (`y`) in visual mode is automatically copied to the system clipboard.
 
-* In normal mode, `gcc` comments the current line; in visual mode, `gc` comments the selected block.
+* With the comment plugin [Comment.nvim](https://github.com/numToStr/Comment.nvim), in normal mode, `gcc` comments the current line; in visual mode, `gc` comments the selected block.
 
 * In visual mode, `>` and `<` function as `Tab` and `Shift+Tab` in VS Code, allowing you to indent or unindent selected code blocks.
 
-* In *Neovim*, you can right-click to open a popup menu that includes a `Select All` option for quickly selecting the entire buffer. Alternatively, you can use *Vim*-style commands such as `gg0vG$` to select the entire buffer or `ggyG` to copy it.
+* In the autocompletion menu, `Tab`/`Shift+Tab` (or `Ctrl+n`/`Ctrl+N`) cycle through the suggestions; in expanded snippet, `Tab`/`Shift+Tab` can jump through snippet fields.
 
+* In *Neovim*, you can right-click to open a popup menu that includes a `Select All` option for quickly selecting the entire buffer. Alternatively, you can use *Vim*-style commands such as `gg0vG$` to select the entire buffer or `ggyG` to copy it.
