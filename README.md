@@ -107,14 +107,14 @@ git clone https://github.com/wwang721/neovim-config
 rm -rf ~/.config/nvim  # or make a backup of your current Neovim config
 ```
 
-If you don't need *LSP*-based autocompletion and only need an outline/taglist window for text files (such as Markdown), or prefer not to install `Node.js`, you can remove the lock file [lazy-lock.json](./nvim/lazy-lock.json) with `rm neovim-config/nvim/lazy-lock.json`, and remove [lsp.lua](./nvim/lua/plugins/lsp.lua) (or even [aerial.lua](./nvim/lua/plugins/aerial.lua)) from my [plugins](./nvim/lua/plugins/) folder: `rm neovim-config/nvim/lua/plugins/lsp.lua` or even with `rm neovim-config/nvim/lua/plugins/aerial.lua`, and then replace the [cmp.lua](./nvim/lua/plugins/cmp.lua) file in the [plugins]((./nvim/lua/plugins/)) folder with the non-*Node.js* version [cmp.lua](./cmp.lua): `mv neovim-config/cmp.lua neovim-config/nvim/lua/plugins/`.
+If you don't need *LSP*-based autocompletion and only need an outline/taglist window for text files (such as Markdown), or prefer not to install `Node.js`, you can remove the lock file [lazy-lock.json](./nvim/lazy-lock.json) with `rm neovim-config/nvim/lazy-lock.json`, and remove [lsp.lua](./nvim/lua/plugins/lsp.lua) (or even [aerial.lua](./nvim/lua/plugins/aerial.lua)) from my [plugins](./nvim/lua/plugins/) folder: `rm neovim-config/nvim/lua/plugins/lsp.lua` or even with `rm neovim-config/nvim/lua/plugins/aerial.lua`, and then replace the [cmp.lua](./nvim/lua/plugins/cmp.lua) file in the [plugins]((./nvim/lua/plugins/)) folder with the non-*Node.js* version [cmp.lua](./cmp.lua) by `mv neovim-config/cmp.lua neovim-config/nvim/lua/plugins/`.
 
 Then, copy my [**nvim**](./nvim) folder to your `~/.config/` directory by 
 ``` sh
 mv neovim-config/nvim ~/.config/
 nvim  # launch Neovim
 ```
-`💤lazy.nvim` will automatically download all required plugins -- done! Then you can remove the rest of this repository with `rm -rf neovim-config`.
+`💤lazy.nvim` will automatically download all required plugins -- done! Then you can remove the rest of this repository by `rm -rf neovim-config`.
 
 Since Neovim follows the **XDG base directory specification**, the downloaded plugins will be stored in your `~/.local/share/nvim/` folder.
 
