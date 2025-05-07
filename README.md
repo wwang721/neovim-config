@@ -134,7 +134,7 @@ If your remote server has no public internet access, you can configure Neovim on
 
 * With the clipboard plugin [nvim-osc52](https://github.com/ojroques/nvim-osc52), any text yanked (`y`) in visual mode is automatically copied to the system clipboard.
 
-* With the comment plugin [Comment.nvim](https://github.com/numToStr/Comment.nvim), in normal mode, `gcc` comments the current line; in visual mode, `gc` comments the selected block.
+* With the comment plugin [Comment.nvim](https://github.com/numToStr/Comment.nvim), in normal mode, `gcc` comments the current line; in visual mode, `gc` comments the selected block. For languages supporting block comments, use `gbc`/`gb` correspondingly.
 
 * In visual mode, `>` and `<` function as `Tab` and `Shift+Tab` in VS Code, allowing you to indent or unindent selected code blocks.
 
