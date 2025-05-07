@@ -3,6 +3,7 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     opts = {
         backends = { "lsp", "treesitter", "markdown", "man" },
+        -- attach_mode = "global",  -- this makes Aerial global (shared across windows) instead of one outline per window
         layout = {
             resize_to_content = false,
             win_opts = {
