@@ -25,6 +25,8 @@ mv nvim.appimage ~/.local/opt/nvim/nvim
 ```
 Then, add `export PATH="$PATH:$HOME/.local/opt/nvim/"` to your shell config (e.g., `~/.bashrc` and reload your shell by `source ~/.bashrc`). You should now be able to use `nvim` from anywhere in your terminal.
 
+https://github.com/neovim/neovim-releases
+for system with not glibc>=2.28
 
 # 📦 Plugins
 
