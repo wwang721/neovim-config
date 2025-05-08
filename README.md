@@ -55,12 +55,13 @@ You can even use 🚀[**LazyVim**](https://www.lazyvim.org/), a pre-configured N
 * [**nvim-tree/nvim-tree.lua**](https://github.com/nvim-tree/nvim-tree.lua): file explorer tree in [tree.lua](./nvim/lua/plugins/tree.lua)
 * [**echasnovski/mini.pairs**](https://github.com/echasnovski/mini.pairs): character pairing in [mini-pairs.lua](./nvim/lua/plugins/mini-pairs.lua)
 * [**numToStr/Comment.nvim**](https://github.com/numToStr/Comment.nvim): smart comment in [comment.lua](./nvim/lua/plugins/comment.lua)
-* [**lukas-reineke/indent-blankline.nvim**](https://github.com/lukas-reineke/indent-blankline.nvim): indent guides in [indent-blankline.nvim](./nvim/lua/plugins/indent-blankline.lua)
-* [**ojroques/nvim-osc52**](https://github.com/ojroques/nvim-osc52): system clipboard in [clipboard.lua](./nvim/lua/plugins/clipboard.lua), which may be unnecessary if you're using Neovim Neovim>=v0.10 (build-in)
-* [**folke/snacks.nvim**](https://github.com/folke/snacks.nvim): modern UI enhancements used by 🚀[**LazyVim**](https://www.lazyvim.org/) in [snacks.lua](./nvim/lua/plugins/snacks.lua)
+* [**ojroques/nvim-osc52**](https://github.com/ojroques/nvim-osc52): system clipboard in [clipboard.lua](./nvim/lua/plugins/clipboard.lua)
+* [**folke/snacks.nvim**](https://github.com/folke/snacks.nvim): modern UI enhancements used by `🚀LazyVim` in [snacks.lua](./nvim/lua/plugins/snacks.lua)
 * [**nvim-treesitter/nvim-treesitter**](https://github.com/nvim-treesitter/nvim-treesitter): improved syntax highlighting, code selection, and folding in [treesitter.lua](./nvim/lua/plugins/treesitter.lua)
   
 > Note: `nvim-tree` needs a **Nerd Font** to show file icons, you can download them [here](https://www.nerdfonts.com/font-downloads). I installed `MesloLGS Nerd Font`/`CaskaydiaMono Nerd Font` as my terminal fonts.
+>
+> The [util/ui.lua](./nvim/lua/util/ui.lua) contains functions used by `🚀LazyVim` (referenced in [option.lua](./nvim/lua/config/options.lua)) to improve code folding with Tree-sitter. I’ve simply copied it for the same purpose.
 
 Neovim has a built-in **Language Server Protocol (LSP)** client. If you want autocompletion, you'll need:
 
@@ -135,7 +136,7 @@ If your remote server has no public internet access, you can configure Neovim on
 
 * `:Mason` opens the UI of `mason.nvim`, where you can view available LSP servers. Move the cursor to the desired server and press `i` to install it. Alternatively, you can edit [lsp.lua](./nvim/lua/plugins/lsp.lua) to add the desired servers under the `ensure_installed` list. I have installed three language servers: `pyright` for Python, `clangd` for C/C++, and `bashls` for shell scripts.
 
-* With the clipboard plugin [nvim-osc52](https://github.com/ojroques/nvim-osc52), any text yanked (`y`) in visual mode is automatically copied to the system clipboard.
+* With the clipboard plugin [nvim-osc52](https://github.com/ojroques/nvim-osc52), any text yanked (`y`) in visual mode is automatically copied to the system clipboard. May be unnecessary if you're using Neovim ≥ 0.10, which has built-in support for `OSC 52`.
 
 * With the comment plugin [Comment.nvim](https://github.com/numToStr/Comment.nvim), in normal mode, `gcc` comments the current line; in visual mode, `gc` comments the selected block. For languages supporting block comments, use `gbc`/`gb` correspondingly.
 
