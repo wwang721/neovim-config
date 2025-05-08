@@ -5,14 +5,15 @@ return {
     dependencies = {
         {
             "williamboman/mason.nvim",
-            build = ":MasonUpdate",
+            version = "1.1.0",
             config = true, -- equivalent to require("mason").setup()
         },
         {
-          "williamboman/mason-lspconfig.nvim",
+            "williamboman/mason-lspconfig.nvim",
+            version = "1.29.0"
         },
         {
-          "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lsp",
         },
     },
     config = function()

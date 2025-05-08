@@ -1,4 +1,5 @@
 return {
+    -- not needed for Neovim >= v0.10 if only usd in local machine, not through SSH
     "ojroques/nvim-osc52",
     event = "VeryLazy",
     config = function()

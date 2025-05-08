@@ -49,7 +49,7 @@ hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
 hi Exception       guifg=#A6E22E               gui=bold
 hi Float           guifg=#AE81FF
 hi FoldColumn      guifg=#6188ad guibg=bg
-hi Folded          guifg=#6188ad guibg=bg
+hi Folded          guifg=#6188ad guibg=#293739
 hi Function        guifg=#A6E22E
 hi Identifier      guifg=#FD971F
 hi Ignore          guifg=#808080 guibg=bg

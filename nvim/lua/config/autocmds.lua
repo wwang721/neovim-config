@@ -132,3 +132,4 @@ vim.api.nvim_create_autocmd("VimLeave", {
         vim.opt.guicursor = "a:ver100-blinkon500-blinkoff500-blinkwait500" -- "a:" applies it across all modes
     end,
 })
+

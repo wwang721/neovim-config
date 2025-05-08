@@ -1,7 +1,12 @@
 return {
     "vim-airline/vim-airline",
-    lazy = false,
+    -- "VeryLazy" only when open a file from cmdline, "BufCreate" when open file from LazyVim snacks.dashboard
+    event = vim.fn.argc(-1) > 0 and { "VeryLazy" } or { "BufCreate" },
     init = function()
+        -- set an empty statusline/tabline till airline loads
+        vim.o.statusline = " "
+        vim.o.showtabline = 2
+
         -- Airline UI config
         vim.g.airline_theme = "molokai"
         vim.g.airline_powerline_fonts = 1
@@ -16,7 +21,7 @@ return {
 
         -- Optional: clear error section
         vim.g["airline_section_error"] = ""
-    end,
+    end, 
     dependencies = {
         "vim-airline/vim-airline-themes",   -- Airline themes
 

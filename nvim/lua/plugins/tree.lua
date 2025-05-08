@@ -11,11 +11,21 @@ return {
                 side = "left",
             },
             renderer = {
+                indent_markers = {
+                    enable = true, -- This enables the │ ├ └ lines
+                    icons = {
+                        corner = "└╴",
+                        edge   = "│ ",
+                        item   = "├╴",
+                        none   = "  ",
+                    },
+                },
                 highlight_git = true,
                 icons = {
                     show = {
                         git = true,
                         folder = true,
+                        folder_arrow = false,
                         file = true,
                     },
                 },
