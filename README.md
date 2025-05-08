@@ -118,7 +118,7 @@ Then, copy my [**nvim**](./nvim) folder to your `~/.config/` directory by
 mv neovim-config/nvim ~/.config/
 nvim  # launch Neovim
 ```
-Just press <enter> -- `💤lazy.nvim` will automatically download all required plugins -- done! Then you can remove the rest of this repository by `rm -rf neovim-config`.
+Just press `<enter>` -- `💤lazy.nvim` will automatically download all required plugins -- done! Then you can remove the rest of this repository by `rm -rf neovim-config`.
 
 Since Neovim follows the **XDG base directory specification**, the downloaded plugins will be stored in your `~/.local/share/nvim/` folder.
 
