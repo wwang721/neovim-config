@@ -68,13 +68,13 @@ Neovim has a built-in **Language Server Protocol (LSP)** client. If you want aut
 * [**hrsh7th/nvim-cmp**](https://github.com/hrsh7th/nvim-cmp): autocompletion engine in [cmp.lua](./nvim/lua/plugins/cmp.lua)
 * [**williamboman/mason.nvim**](https://github.com/williamboman/mason.nvim): LSP-server manager for different programming languages -- a dependency in [lsp.lua](./nvim/lua/plugins/lsp.lua)
 * [**neovim/nvim-lspconfig**](https://github.com/neovim/nvim-lspconfig): easy LSP setup in [lsp.lua](./nvim/lua/plugins/lsp.lua)
-* [**stevearc/aerial.nvim**](https://github.com/stevearc/aerial.nvim): code outline/taglist window in [aerial.lua](./nvim/lua/plugins/aerial.lua)
+* [**stevearc/aerial.nvim**](https://github.com/stevearc/aerial.nvim): code outline/taglist window in [aerial.lua](./nvim/lua/plugins/aerial.lua) using LSP/treesitter
 
 > My understanding of how this works: Although *Neovim* includes a built-in LSP client, it still requires external, language-specific LSP servers to parse files and provide diagnostics or semantic information. `mason.nvim` manages and installs these servers, while `nvim-lspconfig` configures and connects them to the LSP client. Plugins like `nvim-cmp` (for autocompletion) and `aerial.nvim` (for code outline/taglist) then consume the data exposed by the *Neovim* LSP client.
 
 I chose not to use some famous plugins like [**coc.nvim**](https://github.com/neoclide/coc.nvim), as I prefer a lightweight editor that launches quickly.
 
-If you don't need *LSP*-based autocompletion and the outline/taglist window -- or if you're only using non-*Node.js*-based LSP servers (such as `clangd` for C/C++) or already have `Node.js` installed -- you can skip the next section.
+If you don't need *LSP*-based autocompletion -- or if you're only using non-*Node.js*-based LSP servers (such as `clangd` for C/C++) or already have `Node.js` installed -- you can skip the next section.
 
 
 ## 🧪 Install Node.js
@@ -111,7 +111,7 @@ git clone https://github.com/wwang721/neovim-config
 rm -rf ~/.config/nvim  # or make a backup of your current Neovim config
 ```
 
-If you don't need *LSP*-based autocompletion and only need an outline/taglist window for text files (such as Markdown), or prefer not to install `Node.js`, you can remove the lock file [lazy-lock.json](./nvim/lazy-lock.json) with `rm neovim-config/nvim/lazy-lock.json`, and remove [lsp.lua](./nvim/lua/plugins/lsp.lua) (or even [aerial.lua](./nvim/lua/plugins/aerial.lua)) from my [plugins](./nvim/lua/plugins/) folder: `rm neovim-config/nvim/lua/plugins/lsp.lua` or even with `rm neovim-config/nvim/lua/plugins/aerial.lua`, and then replace the [cmp.lua](./nvim/lua/plugins/cmp.lua) file in the [plugins]((./nvim/lua/plugins/)) folder with the non-*Node.js* version [cmp.lua](./cmp.lua) by `mv neovim-config/cmp.lua neovim-config/nvim/lua/plugins/`.
+If you don't need *LSP*-based autocompletion and only need a simple outline/taglist window using `treesitter`, or prefer not to install `Node.js`, you can remove the lock file [lazy-lock.json](./nvim/lazy-lock.json) with `rm neovim-config/nvim/lazy-lock.json`, and remove [lsp.lua](./nvim/lua/plugins/lsp.lua) from my [plugins](./nvim/lua/plugins/) folder: `rm neovim-config/nvim/lua/plugins/lsp.lua`, and then replace the [cmp.lua](./nvim/lua/plugins/cmp.lua) file in the [plugins]((./nvim/lua/plugins/)) folder with the non-*Node.js* version [cmp.lua](./cmp.lua) by `mv neovim-config/cmp.lua neovim-config/nvim/lua/plugins/`.
 
 Then, copy my [**nvim**](./nvim) folder to your `~/.config/` directory by 
 ``` sh
@@ -142,7 +142,7 @@ If your remote server has no public internet access, you can configure Neovim on
 
 * In visual mode, `>` and `<` function as `Tab` and `Shift+Tab` in VS Code, allowing you to indent or unindent selected code blocks.
 
-* In the autocompletion menu, `Tab`/`Shift+Tab` (or `Ctrl+n`/`Ctrl+N`) cycle through the suggestions; in expanded snippet, `Tab`/`Shift+Tab` can jump through snippet fields.
+* In the autocompletion menu, `Tab`/`Shift+Tab` (or `Ctrl+n`/`Ctrl+N`) cycle through the suggestions; `Ctrl+e` closes the completion menu temporarily if you don't like any of the completions; in expanded snippet, `Tab`/`Shift+Tab` can jump through snippet fields.
 
 * In *Neovim*, you can right-click to open a popup menu that includes a `Select All` option for quickly selecting the entire buffer. Alternatively, you can use *Vim*-style commands such as `gg0vG$` to select the entire buffer or `ggyG` to copy it.
 
