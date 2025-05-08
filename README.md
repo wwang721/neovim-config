@@ -13,8 +13,8 @@ On Linux, you can either use [pre-built archives](https://github.com/neovim/neov
 
 For example, since I don’t have superuser privileges on the remote server, I prefer to install *Neovim* locally. This can be done with the following steps:
 ``` sh
-# Download Neovim 0.9 AppImage (I don't recommend older versions)
-curl -LO https://github.com/neovim/neovim/releases/download/v0.9.1/nvim.appimage
+# Download Neovim 0.10 AppImage (I don't recommend older versions)
+curl -LO https://github.com/neovim/neovim/releases/download/v0.10.1/nvim.appimage
 chmod u+x nvim.appimage
 ./nvim.appimage
 ```
@@ -25,8 +25,7 @@ mv nvim.appimage ~/.local/opt/nvim/nvim
 ```
 Then, add `export PATH="$PATH:$HOME/.local/opt/nvim/"` to your shell config (e.g., `~/.bashrc` and reload your shell by `source ~/.bashrc`). You should now be able to use `nvim` from anywhere in your terminal.
 
-https://github.com/neovim/neovim-releases
-for system with not glibc>=2.28
+> If your system reports errors such as `no GLIBC 2.28/2.29`, check https://github.com/neovim/neovim-releases page for [unsupported builds](https://github.com/neovim/neovim-releases/releases) for older glibc versions. Download the `.appimage` and the following steps are the same.
 
 # 📦 Plugins
 
@@ -57,8 +56,10 @@ You can even use 🚀[**LazyVim**](https://www.lazyvim.org/), a pre-configured N
 * [**echasnovski/mini.pairs**](https://github.com/echasnovski/mini.pairs): character pairing in [mini-pairs.lua](./nvim/lua/plugins/mini-pairs.lua)
 * [**numToStr/Comment.nvim**](https://github.com/numToStr/Comment.nvim): smart comment in [comment.lua](./nvim/lua/plugins/comment.lua)
 * [**lukas-reineke/indent-blankline.nvim**](https://github.com/lukas-reineke/indent-blankline.nvim): indent guides in [indent-blankline.nvim](./nvim/lua/plugins/indent-blankline.lua)
-* [**ojroques/nvim-osc52**](https://github.com/ojroques/nvim-osc52): system clipboard in [clipboard.lua](./nvim/lua/plugins/clipboard.lua)
-
+* [**ojroques/nvim-osc52**](https://github.com/ojroques/nvim-osc52): system clipboard in [clipboard.lua](./nvim/lua/plugins/clipboard.lua), which may be unnecessary if you're using Neovim Neovim>=v0.10 (build-in)
+* [**folke/snacks.nvim**](https://github.com/folke/snacks.nvim): modern UI enhancements used by 🚀[**LazyVim**](https://www.lazyvim.org/) in [snacks.lua](./nvim/lua/plugins/snacks.lua)
+* [**nvim-treesitter/nvim-treesitter**](https://github.com/nvim-treesitter/nvim-treesitter): improved syntax highlighting, code selection, and folding in [treesitter.lua](./nvim/lua/plugins/treesitter.lua)
+  
 > Note: `nvim-tree` needs a **Nerd Font** to show file icons, you can download them [here](https://www.nerdfonts.com/font-downloads). I installed `MesloLGS Nerd Font`/`CaskaydiaMono Nerd Font` as my terminal fonts.
 
 Neovim has a built-in **Language Server Protocol (LSP)** client. If you want autocompletion, you'll need:
@@ -70,7 +71,7 @@ Neovim has a built-in **Language Server Protocol (LSP)** client. If you want aut
 
 > My understanding of how this works: Although *Neovim* includes a built-in LSP client, it still requires external, language-specific LSP servers to parse files and provide diagnostics or semantic information. `mason.nvim` manages and installs these servers, while `nvim-lspconfig` configures and connects them to the LSP client. Plugins like `nvim-cmp` (for autocompletion) and `aerial.nvim` (for code outline/taglist) then consume the data exposed by the *Neovim* LSP client.
 
-I chose not to use some famous plugins like [**coc.nvim**](https://github.com/neoclide/coc.nvim) and [**nvim-treesitter**](https://github.com/nvim-treesitter/nvim-treesitter), as I prefer a lightweight editor that launches quickly.
+I chose not to use some famous plugins like [**coc.nvim**](https://github.com/neoclide/coc.nvim), as I prefer a lightweight editor that launches quickly.
 
 If you don't need *LSP*-based autocompletion and the outline/taglist window -- or if you're only using non-*Node.js*-based LSP servers (such as `clangd` for C/C++) or already have `Node.js` installed -- you can skip the next section.
 
@@ -143,3 +144,7 @@ If your remote server has no public internet access, you can configure Neovim on
 * In the autocompletion menu, `Tab`/`Shift+Tab` (or `Ctrl+n`/`Ctrl+N`) cycle through the suggestions; in expanded snippet, `Tab`/`Shift+Tab` can jump through snippet fields.
 
 * In *Neovim*, you can right-click to open a popup menu that includes a `Select All` option for quickly selecting the entire buffer. Alternatively, you can use *Vim*-style commands such as `gg0vG$` to select the entire buffer or `ggyG` to copy it.
+
+* `:TSInstall` installs Tree-sitter parsers for different languages; `:Inspect` checks syntax capture at the cursor. Tree-sitter incremental selection is mapped to `Ctrl+<space>` (to expand) and `<BS>` backspace (to shrink) by default in [treesitter.lua](./nvim/lua/plugins/treesitter.lua). Other commands like `:TSEnable`/`:TSDisable` can turn on/off treesitter highlight and indent.
+
+* With `snacks.nvim`'s notifier, `<leader>n` opens the notification history, `<leader>un` dismisses all notifications. By default,  `<leader>` is set to `" "` space in [lazy.lua](./nvim/lua/config/lazy.lua).
