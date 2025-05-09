@@ -1,3 +1,7 @@
+-- Get current Neovim version
+local version = vim.version()
+local version_string = string.format("v%d.%d.%d", version.major, version.minor, version.patch)
+
 return {
     "folke/snacks.nvim",
     priority = 1000,
@@ -27,7 +31,8 @@ return {
   ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
   ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
   ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
-  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
+                                             %s]], version_string, version_string_nopatch),
                 -- stylua: ignore
                 ---@type snacks.dashboard.Item[]
                 keys = {
