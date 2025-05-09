@@ -148,4 +148,4 @@ If your remote server has no public internet access, you can configure Neovim on
 
 * `:TSInstall` installs Tree-sitter parsers for different languages; `:Inspect` checks syntax capture at the cursor. Tree-sitter incremental selection is mapped to `Ctrl+<space>` (to expand) and `<BS>` backspace (to shrink) by default in [treesitter.lua](./nvim/lua/plugins/treesitter.lua). Other commands like `:TSEnable`/`:TSDisable` can turn on/off treesitter highlight and indent.
 
-* With `snacks.nvim`'s notifier, `<leader>n` opens the notification history, `<leader>un` dismisses all notifications. By default,  `<leader>` is set to `" "` space in [lazy.lua](./nvim/lua/config/lazy.lua).
+* With `snacks.nvim`'s notifier, `<leader>n` opens the notification history, `<leader>un` dismisses all active notifications. By default,  `<leader>` is set to `" "` (space key) in [lazy.lua](./nvim/lua/config/lazy.lua).
