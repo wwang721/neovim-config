@@ -150,4 +150,4 @@ If your remote server has no public internet access, you can configure Neovim on
 
 * With `snacks.nvim`'s notifier, `<leader>n` opens the notification history, `<leader>un` dismisses all active notifications. By default,  `<leader>` is set to `" "` (space key) in [lazy.lua](./nvim/lua/config/lazy.lua).
 
-* In `nvim-tree.lua`, we can use the default `Ctrl+]` to change root to current node; use `-` to change root to parent folder; `Ctrl+r` rename; `:help nvim-tree-mappings-default` check other key mappings.
+* In `nvim-tree.lua`, we can use the default `Ctrl+]` to change root to current node; use `-` to change root to parent folder; `Ctrl+r` rename; `:help nvim-tree-mappings-default` or use `g?` in the NvimTree window to check other key mappings.
