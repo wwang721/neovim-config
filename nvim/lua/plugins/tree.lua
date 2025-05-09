@@ -14,13 +14,13 @@ return {
                 indent_markers = {
                     enable = true, -- This enables the │ ├ └ lines
                     icons = {
-                        corner = "└╴",
-                        edge   = "│ ",
-                        item   = "├╴",
-                        none   = "  ",
+                        corner = "└",
+                        edge   = "│",
+                        item   = "├",
+                        bottom = "─",
+                        none   = " ",
                     },
                 },
-                highlight_git = true,
                 icons = {
                     show = {
                         git = true,
@@ -28,6 +28,9 @@ return {
                         folder_arrow = false,
                         file = true,
                     },
+                    glyphs = {
+                        git = { deleted = "", }
+                    }
                 },
             },
             filters = {
