@@ -10,7 +10,10 @@ return {
         bigfile = { enabled = true },
         indent = { enabled = true },
         statuscolumn = { enabled = true },
-        notifier = { enabled = true },
+        notifier = { 
+            enabled = true,
+            timeout = 10000, -- time before message disappears (milliseconds)
+        },
         quickfile = { enabled = true },
         scroll = { enabled = true },
         dashboard = {
@@ -51,4 +54,3 @@ return {
         { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
     },
 }
-
