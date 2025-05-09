@@ -22,13 +22,12 @@ return {
                     return LazyVim.pick(cmd, opts)()
                 end,
                 header = [[
-          ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z
-          ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z    
-          ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z       
-          ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z         
-          ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║           
-          ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝           
-                ]],
+  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
                 -- stylua: ignore
                 ---@type snacks.dashboard.Item[]
                 keys = {
@@ -52,4 +51,13 @@ return {
             end, desc = "Notification History" },
         { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
     },
+    init = function()
+        -- Define custom commands to reopen the dashboard
+        local open_dashboard = function()
+            require("snacks.dashboard").open()
+        end
+
+        vim.api.nvim_create_user_command("Dashboard", open_dashboard, {})
+        vim.api.nvim_create_user_command("D", open_dashboard, {})
+    end,
 }
