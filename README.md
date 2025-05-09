@@ -144,7 +144,7 @@ If your remote server has no public internet access, you can configure Neovim on
 
 * In the autocompletion menu, `Tab`/`Shift+Tab` (or `Ctrl+n`/`Ctrl+p`) cycle through the suggestions; `Ctrl+e` closes the completion menu temporarily if you don't like any of the completions; in expanded snippet, `Tab`/`Shift+Tab` can jump through snippet fields.
 
-* In *Neovim*, you can right-click to open a popup menu that includes a `Select All` option for quickly selecting the entire buffer. Alternatively, you can use *Vim*-style commands such as `gg0vG$` to select the entire buffer or `ggyG` to copy it.
+* In *Neovim*, you can right-click to open a popup menu that includes a `Select All` option for quickly selecting the entire buffer. Alternatively, you can use *Vim*-style commands such as `gg0vG$`/`ggVG` to select the entire buffer or `ggyG` to copy it.
 
 * `:TSInstall` installs Tree-sitter parsers for different languages; `:Inspect` checks syntax capture at the cursor. Tree-sitter incremental selection is mapped to `Ctrl+<space>` (to expand) and `<BS>` backspace (to shrink) by default in [treesitter.lua](./nvim/lua/plugins/treesitter.lua). Other commands like `:TSEnable`/`:TSDisable` can turn on/off treesitter highlight and indent.
 
