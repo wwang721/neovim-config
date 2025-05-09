@@ -56,7 +56,6 @@ return {
         local open_dashboard = function()
             require("snacks.dashboard").open()
         end
-
         vim.api.nvim_create_user_command("Dashboard", open_dashboard, {})
         vim.api.nvim_create_user_command("D", open_dashboard, {})
     end,
