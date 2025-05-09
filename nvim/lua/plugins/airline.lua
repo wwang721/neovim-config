@@ -22,6 +22,10 @@ return {
         -- Optional: clear error section
         vim.g["airline_section_error"] = ""
     end, 
+    config = function() 
+        -- ensure a global statusline
+        vim.o.laststatus = 3
+    end,
     dependencies = {
         "vim-airline/vim-airline-themes",   -- Airline themes
 
