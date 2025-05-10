@@ -21,6 +21,7 @@ return {
             background_clear = {
                 "float_win", -- for ""nvim-cmp"" border, see their website, also need to modify `cmp.lua`
                 "nvim-tree",
+                "neo-tree",
                 "toggleterm",
                 "telescope",
                 "renamer",
