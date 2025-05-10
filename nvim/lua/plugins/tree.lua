@@ -22,6 +22,9 @@ return {
                     },
                 },
                 icons = {
+                    web_devicons = {
+                        folder = { enable = false },
+                    },
                     show = {
                         git = true,
                         folder = true,
@@ -41,3 +44,4 @@ return {
     keys = { { "<F2>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle File Tree" } },
     -- lazy = false,  -- load on startup
 }
+
