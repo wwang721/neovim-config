@@ -23,7 +23,14 @@ return {
                 },
                 icons = {
                     web_devicons = {
-                        folder = { enable = false },
+                        file = {
+                            enable = true,
+                            color = true,
+                        },
+                        folder = {
+                            enable = false,
+                            color = true,
+                        },
                     },
                     show = {
                         git = true,
@@ -32,7 +39,7 @@ return {
                         file = true,
                     },
                     glyphs = {
-                        git = { deleted = "", }
+                        git = { deleted = "", } -- Windows Terminal somehow can't show the default icon normally
                     }
                 },
             },
@@ -44,4 +51,3 @@ return {
     keys = { { "<F2>", "<cmd>NvimTreeToggle<CR>", desc = "Toggle File Tree" } },
     -- lazy = false,  -- load on startup
 }
-
