@@ -30,6 +30,16 @@ return {
         })
 
         cmp.setup({
+            -- for monokai-pro theme
+            -- window = {
+            --     completion = cmp.config.window.bordered(),
+            --     documentation = cmp.config.window.bordered(),
+            --     border = "rounded",
+            -- },
+            -- completion = {
+            --     border = "rounded",
+            -- },
+            
             snippet = {
                 expand = function(args)
                     luasnip.lsp_expand(args.body)
