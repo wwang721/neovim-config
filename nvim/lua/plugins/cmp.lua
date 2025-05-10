@@ -14,10 +14,14 @@ return {
 
         -- Predefined snippets
         "rafamadriz/friendly-snippets",
+        
+        -- icons
+        "onsails/lspkind.nvim",
     },
     config = function()
         local cmp = require("cmp")
         local luasnip = require("luasnip")
+        local lspkind = require("lspkind")
 
         -- Load VSCode-style snippets from friendly-snippets
         require("luasnip.loaders.from_vscode").lazy_load()
@@ -39,7 +43,11 @@ return {
             -- completion = {
             --     border = "rounded",
             -- },
-            
+
+            formatting = {
+                format = lspkind.cmp_format({ mode = 'symbol_text', })
+            },
+
             snippet = {
                 expand = function(args)
                     luasnip.lsp_expand(args.body)
