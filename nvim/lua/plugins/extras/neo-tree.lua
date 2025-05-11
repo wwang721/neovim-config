@@ -42,11 +42,11 @@ return {
         {
             "<F4>",
             function()
-            require("neo-tree.command").execute({
-                toggle = true,
-                reveal = true,
-                reveal_force_cwd = true,
-            })
+                require("neo-tree.command").execute({
+                    toggle = true,
+                    reveal = true,
+                    dir = vim.fn.expand("%:p:h"),
+                })
             end,
             desc = "Explorer NeoTree (reveal current active file)",
         },
