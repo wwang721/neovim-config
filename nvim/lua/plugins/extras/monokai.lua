@@ -19,14 +19,14 @@ return {
             filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
             inc_search = "background", -- underline | background
             background_clear = {
-                "float_win", -- for ""nvim-cmp"" border, see their website, also need to modify `cmp.lua`
-                "nvim-tree",
-                "neo-tree",
+                -- "float_win", -- for ""nvim-cmp"" border, see their website, also need to modify `cmp.lua`
+                -- "nvim-tree",
+                -- "neo-tree",
                 "toggleterm",
                 "telescope",
                 "renamer",
                 "notify",
-                "bufferline",
+                -- "bufferline",
             }, -- "float_win", "toggleterm", "telescope", "which-key", "renamer", "neo-tree", "nvim-tree", "bufferline"
         })
         
