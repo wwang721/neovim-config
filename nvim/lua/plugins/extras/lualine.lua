@@ -1,7 +1,7 @@
 return {
     'nvim-lualine/lualine.nvim',
     -- "VeryLazy" only when open a file from cmdline, "BufCreate" when open file from LazyVim snacks.dashboard
-    event = vim.fn.argc(-1) > 0 and { "VeryLazy" } or { "BufCreate" },
+    event = vim.fn.argc(-1) > 0 and { "VeryLazy" } or { "BufCreate", "InsertEnter" },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     init = function()
         vim.g.lualine_laststatus = vim.o.laststatus
