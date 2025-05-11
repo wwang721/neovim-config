@@ -22,9 +22,6 @@ return {
         scroll = { enabled = true },
         dashboard = {
             preset = {
-                pick = function(cmd, opts)
-                    return LazyVim.pick(cmd, opts)()
-                end,
                 header = string.format([[
   ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
   ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
