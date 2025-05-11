@@ -52,7 +52,7 @@ The [init.lua](./nvim/init.lua) file serves as the *Lua*-based equivalent of `in
 You can even use 🚀[**LazyVim**](https://www.lazyvim.org/), a pre-configured Neovim setup powered by the same plugin manager `💤lazy.nvim`, which eliminates the need to manage plugins manually. However, I find `🚀LazyVim` a bit too heavy for my needs, so here is my minimal plugin list:
 
 * [**vim-airline/vim-airline**](https://github.com/vim-airline/vim-airline): status/tabline in [airline.lua](./nvim/lua/plugins/airline.lua)
-* [**nvim-tree/nvim-tree.lua**](https://github.com/nvim-tree/nvim-tree.lua): file explorer tree in [tree.lua](./nvim/lua/plugins/tree.lua)
+* [**nvim-tree/nvim-tree.lua**](https://github.com/nvim-tree/nvim-tree.lua): file explorer tree in [nvim-tree.lua](./nvim/lua/plugins/nvim-tree.lua)
 * [**echasnovski/mini.pairs**](https://github.com/echasnovski/mini.pairs): character pairing in [mini-pairs.lua](./nvim/lua/plugins/mini-pairs.lua)
 * [**numToStr/Comment.nvim**](https://github.com/numToStr/Comment.nvim): smart comment in [comment.lua](./nvim/lua/plugins/comment.lua)
 * [**ojroques/nvim-osc52**](https://github.com/ojroques/nvim-osc52): system clipboard in [clipboard.lua](./nvim/lua/plugins/clipboard.lua)
@@ -130,7 +130,7 @@ If your remote server has no public internet access, you can configure Neovim on
 
 * `:Lazy` opens the `lazy.nvim` UI, allowing you to sync/clean/restore/... plugins. It also displays the loading time of each plugin, helping you identify candidates for ["lazy-loading"](https://lazy.folke.io/spec/lazy_loading) to improve startup efficiency.
 
-* I have mapped `<F2>` to toggle the file explorer tree and `<F3>` to toggle the outline (taglist) window. You can adjust the window widths and key mappings in [tree.lua](./nvim/lua/plugins/tree.lua) and [aerial.lua](./nvim/lua/plugins/aerial.lua).
+* I have mapped `<F2>` to toggle the file explorer tree and `<F3>` to toggle the outline (taglist) window. You can adjust the window widths and key mappings in [nvim-tree.lua](./nvim/lua/plugins/nvim-tree.lua) and [aerial.lua](./nvim/lua/plugins/aerial.lua).
 
 * `:LspInfo` to check the status of the currently active LSP server.
 
