@@ -7,6 +7,10 @@ vim.g.snacks_animate = true
 
 local opt = vim.opt
 
+-- only set clipboard if not in ssh, to make sure the OSC 52
+-- integration works automatically. Requires Neovim >= 0.10.0
+-- opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard, no need with nvim-osc52 plugin
+
 opt.showmode = false -- hide mode messages in the left-bottom corner since we have a statusline
 opt.showcmd = true  -- show partial key sequences in the bottom-right corner
 
