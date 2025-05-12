@@ -1,7 +1,7 @@
 return {
     "neovim/nvim-lspconfig",
     version = "0.1.7", -- latest version works with Neovim 0.9.x
-    event = { "BufReadPost", "BufNewFile" },
+    event = { "BufReadPost", "BufNewFile", "VeryLazy" },
     dependencies = {
         {
             "williamboman/mason.nvim",
