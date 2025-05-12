@@ -20,6 +20,7 @@ local enabled = {
     "ts-comments.nvim",
     "vim-repeat",
     "yanky.nvim",
+    "Comment.nvim",
 }
 
 local Config = require("lazy.core.config")
