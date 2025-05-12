@@ -35,6 +35,8 @@ vim.g.snacks_animate = false
 -- integration works automatically. Requires Neovim >= 0.10.0
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
 
+vim.opt.showmode = true -- show mode messages
+
 -- Add some vscode specific keymaps
 vim.api.nvim_create_autocmd("User", {
   pattern = "LazyVimKeymapsDefaults",
