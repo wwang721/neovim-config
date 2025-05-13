@@ -37,7 +37,7 @@ return {
         
         vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#ffffff", bg = "NONE" }) -- make the vertical/horizontal split lines visibly white
 
-        -- make the "nvim-tree" split lines visibly white; also work for "neo-tree" if set to "NeoTreeWinSeparator"
+        -- make the "nvim-tree" split lines visibly white, also work for "neo-tree" if set to "NeoTreeWinSeparator"
         vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#ffffff", bg = "NONE" })
         
         vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#E6DB74" }) -- restore Monokai-style yellow coloring to folder icons
