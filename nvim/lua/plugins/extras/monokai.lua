@@ -33,10 +33,13 @@ return {
         vim.cmd([[colorscheme monokai-pro]]) -- apply the colorscheme
 
         vim.api.nvim_set_hl(0, "SnacksIndent", { fg = "#555555", nocombine = true }) -- fix the indent guide color used by
-        vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#ffffff", bg = "NONE" }) -- make the vertical/horizontal split lines visibly white
-        vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#ffffff", bg = "NONE" }) -- make the "nvim-tree" split lines visibly white
         vim.api.nvim_set_hl(0, "Visual", { bg = "#555555" })  -- set the selection background gray
+        
+        vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#ffffff", bg = "NONE" }) -- make the vertical/horizontal split lines visibly white
 
+        -- make the "nvim-tree" split lines visibly white; also work for "neo-tree" if set to "NeoTreeWinSeparator"
+        vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#ffffff", bg = "NONE" })
+        
         vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#E6DB74" }) -- restore Monokai-style yellow coloring to folder icons
         vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg = "#E6DB74" }) -- give folder names the same yellow as icons
 
