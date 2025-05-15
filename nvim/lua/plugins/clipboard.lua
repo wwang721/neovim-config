@@ -12,18 +12,5 @@ return {
                 end
             end,
         })
-
-        -- Optional: override default copy behavior
-        vim.g.clipboard = {
-            name = "osc52",
-            copy = {
-                ["+"] = osc52.copy,
-                ["*"] = osc52.copy,
-            },
-            paste = {
-                ["+"] = osc52.paste,
-                ["*"] = osc52.paste,
-            },
-        }
     end,
 }
