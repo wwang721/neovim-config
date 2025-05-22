@@ -26,10 +26,14 @@ opt.cursorline = true -- Enable highlighting of the current line
 -- opt.termguicolors = true -- True color support
 
 -- opt.guicursor = "" -- disable cursor shape changes
+-- use Neovim's default cursor shapes, see :h 'guicursor'
 opt.guicursor = {
-    "n-v-sm:block",      -- block cursor in normal, visual, and select mode
-    "i-c-ci-ve:ver25",       -- vertical bar (25%) in insert, command-line, and related modes
-    "r-cr-o:hor20"         -- horizontal bar (20%) in replace and operator-pending modes
+    -- "n-v-c:block",
+    -- "i-ci-ve:ver25",
+    -- "r-cr:hor20",
+    -- "o:hor50",
+    "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
+    "sm:block-blinkwait175-blinkoff150-blinkon175"
 }
 
 opt.tabstop = 4 -- Number of spaces tabs count for
