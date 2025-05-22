@@ -45,5 +45,8 @@ return {
 
         vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { fg = "#FD971F", bold = true })  -- orange root
 
+        -- fix the file path highlight in snacks.nvim's picker
+        vim.api.nvim_set_hl(0, 'SnacksPickerDir', { fg = '#646464', bg = 'none' })
+
     end,
 }
