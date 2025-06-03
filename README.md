@@ -146,7 +146,7 @@ If your remote server has no public internet access, you can configure Neovim on
 
 * In *Neovim*, you can right-click to open a popup menu that includes a `Select All` option for quickly selecting the entire buffer. Alternatively, you can use *Vim*-style commands such as `gg0vG$`/`ggVG` to select the entire buffer or `ggyG` to copy it.
 
-* `:TSInstall` installs Tree-sitter parsers for different languages; `:Inspect` checks syntax capture at the cursor. Tree-sitter incremental selection is mapped to `<Tab>` (to expand, default `Ctrl+<space>` sometimes breaks) and `<BS>` backspace (to shrink) in [treesitter.lua](./nvim/lua/plugins/treesitter.lua). Other commands like `:TSEnable`/`:TSDisable` can turn on/off treesitter highlight and indent.
+* `:TSInstall` installs Tree-sitter parsers for different languages; `:Inspect` checks syntax capture at the cursor. Tree-sitter incremental selection is mapped to `<Tab>` (to expand, default `Ctrl+<space>` sometimes breaks; since `<Tab>` is equivalent to `Ctrl+i` in *Vim*, so I have to map `Ctrl+i`'s original function to `Ctrl+j` in the [keymaps.lua](./nvim/lua/config/keymaps.lua)) and `<BS>` backspace (to shrink) in [treesitter.lua](./nvim/lua/plugins/treesitter.lua). Other commands like `:TSEnable`/`:TSDisable` can turn on/off treesitter highlight and indent.
 
 * With `snacks.nvim`'s notifier, `<leader>n` opens the notification history, `<leader>un` dismisses all active notifications. By default,  `<leader>` is set to `" "` (space key) in [lazy.lua](./nvim/lua/config/lazy.lua). I also defined two custom commands `:Dashboard`/`:D` to reopen the dashboard in [snacks.lua](./nvim/lua/plugins/snacks.lua).
 
