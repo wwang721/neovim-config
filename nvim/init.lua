@@ -2,7 +2,7 @@
 require("config.options")
 
 -- Key mappings
--- require("config.keymaps")
+require("config.keymaps")
 
 -- Autocommands
 require("config.autocmds")
