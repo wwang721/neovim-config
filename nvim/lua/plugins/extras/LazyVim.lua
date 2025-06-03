@@ -71,10 +71,9 @@ return {
             local lualine_require = require("lualine_require")
             lualine_require.require = require
                 
-            local icons = require("lazyvim.config").icons -- require("lazyvim.config").icons
-
-            vim.o.laststatus = vim.g.lualine_laststatus
+            local icons = require("lazyvim.config").icons
             
+            vim.o.laststatus = vim.g.lualine_laststatus
 
             local opts = {
                 options = {
