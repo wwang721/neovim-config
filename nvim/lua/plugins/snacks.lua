@@ -52,6 +52,8 @@ return {
                 end
             end, desc = "Notification History" },
         { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+        -- Top Pickers & Explorer
+        { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
     },
     init = function()
         -- Define custom commands to reopen the dashboard
