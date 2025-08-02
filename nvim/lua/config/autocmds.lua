@@ -127,9 +127,21 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 
 -- On exiting Neovim, explicitly reset the terminal cursor to a Windows-Termial-style blinking verticle line,
 -- since Neovim sets cursor shapes per mode by default (via 'guicursor'), but may not restore the cursor shape on exit.
-vim.api.nvim_create_autocmd("VimLeave", {
-    callback = function()
-        vim.opt.guicursor = "a:ver100-blinkon500-blinkoff500-blinkwait500" -- "a:" applies it across all modes
-    end,
-})
+-- vim.api.nvim_create_autocmd("VimLeave", {
+--     callback = function()
+--         vim.opt.guicursor = "a:ver100-blinkon500-blinkoff500-blinkwait500" -- "a:" applies it across all modes
+--     end,
+-- })
 
+-- Set CopilotSuggestion highlight group color
+vim.api.nvim_create_autocmd('ColorScheme', {
+    pattern = '*',
+    -- group = ...,
+    callback = function()
+    vim.api.nvim_set_hl(0, 'CopilotSuggestion', {
+        fg = '#575757',
+        ctermfg = 8,
+        force = true
+    })
+    end
+})
