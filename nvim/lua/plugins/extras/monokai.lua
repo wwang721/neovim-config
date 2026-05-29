@@ -1,6 +1,7 @@
 return {
     "loctvl842/monokai-pro.nvim",
     -- https://github.com/loctvl842/monokai-pro.nvim
+    commit = "31bad73",
     lazy = false,
     config = function()
         require("monokai-pro").setup({
